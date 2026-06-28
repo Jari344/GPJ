@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPJ Studios | Enterprise Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <h2>GPJ Studios</h2>
+        <ul>
+            <li class="nav-item active" onclick="showView('dashboard')">Dashboard</li>
+            <li class="nav-item" onclick="showView('orders')">Manage Orders</li>
+            <li class="nav-item">Settings</li>
+        </ul>
+    </nav>
+    <main class="content">
+        <header>
+            <h1 id="view-title">Dashboard</h1>
+            <button class="btn-primary" onclick="toggleVisibility('order-form')">+ New Order</button>
+        </header>
+        
+        <div id="order-form" class="card" style="display:none;">
+            <h3>Create New Order</h3>
+            <input type="text" id="cName" placeholder="Client Name">
+            <input type="text" id="sName" placeholder="Service">
+            <input type="text" id="pAmount" placeholder="Amount ($)">
+            <select id="statusSelect">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+            <button class="btn-primary" onclick="addOrder()">Save Order</button>
+        </div>
+
+        <section id="table-container"></section>
+    </main>
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
